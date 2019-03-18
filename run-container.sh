@@ -4,10 +4,9 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-#REPO=bytefiddler
 REPO=lisaong
 IMAGE=$(basename $DIR)
-TAG="latest"
+TAG="$(uname -m)"
 FULL_TAG=${REPO}/${IMAGE}:${TAG}
 
 GLUSTER_MOUNT=/mnt/kura
