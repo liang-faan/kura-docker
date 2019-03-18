@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   kura:
-    command: /start.sh 128m
-    image: bytefiddler/kura-docker-arm:armv7l
+    command: /start.sh 512m
+    image: lisaong/kura-docker-arm:armv7l
     ports:
       - "80:80"
     volumes:
