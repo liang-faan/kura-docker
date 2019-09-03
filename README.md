@@ -2,7 +2,9 @@
 Docker images for Raspberry Pi with Eclipse Kura
 
 ## build
-On Raspberry Pi 3 (Raspbian Stretch):
+On Raspberry Pi 3 (Raspbian Stretch or Buster):
+
+Install docker: https://blog.docker.com/2019/03/happy-pi-day-docker-raspberry-pi/
 
 ```
 docker login
