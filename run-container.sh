@@ -24,5 +24,4 @@ TAG=latest
 FULL_TAG=${REPO}/${IMAGE}:${TAG}
 
 docker run -d -v /home/ubuntu/kura-docker-arm/kura/data:/opt/eclipse/kura/data \
-		-v /home/ubuntu/kura-docker-arm/kura/user/snapshots:/opt/eclipse/kura/user/snapshots \
 		 -p $LOCAL_PORT:80 $FULL_TAG /start.sh 2048m
