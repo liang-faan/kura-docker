@@ -1,12 +1,14 @@
 #!/bin/bash
 
 
-mkdir -p /home/ubuntu/kura-docker-arm/kura
-chmod 777 /home/ubuntu/kura-docker-arm/kura
+#mkdir -p /home/ubuntu/kura-docker-arm/kura
+#chmod 777 /home/ubuntu/kura-docker-arm/kura
+
 mkdir -p /home/ubuntu/kura-docker-arm/kura/data
 chmod 777 /home/ubuntu/kura-docker-arm/kura/data
-mkdir -p /home/ubuntu/kura-docker-arm/kura/user
-chmod 777 /home/ubuntu/kura-docker-arm/kura/user
+
+mkdir -p /home/ubuntu/kura-docker-arm/kura/user/snapshots
+chmod 777 /home/ubuntu/kura-docker-arm/kura/user/snapshots
 
 set -e
 
@@ -22,5 +24,5 @@ TAG=latest
 FULL_TAG=${REPO}/${IMAGE}:${TAG}
 
 docker run -d -v /home/ubuntu/kura-docker-arm/kura/data:/opt/eclipse/kura/data \
-		-v /home/ubuntu/kura-docker-arm/kura/user:/opt/eclipse/kura/data/user \
+		-v /home/ubuntu/kura-docker-arm/kura/user/snapshots:/opt/eclipse/kura/user/snapshots \
 		 -p $LOCAL_PORT:80 $FULL_TAG /start.sh 2048m
