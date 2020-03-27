@@ -15,7 +15,7 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
 # port to map locally to the docker container
-LOCAL_PORT=$1
+LOCAL_PORT=81
 echo $LOCAL_PORT
 
 REPO=liangfaan
