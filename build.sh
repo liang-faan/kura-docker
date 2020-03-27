@@ -5,7 +5,7 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 DATETIME=$(date '+%Y%m%d%H%M%S')
 
-REPO=lisaong
+REPO=liangfaan
 IMAGE=$(basename $DIR)
 TAG="$(uname -m)"
 FULL_TAG=${REPO}/${IMAGE}:${TAG}

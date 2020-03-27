@@ -1,5 +1,13 @@
 #!/bin/bash
 
+
+mkdir -p /home/ubuntu/kura-docker-arm/kura
+chmod 777 /home/ubuntu/kura-docker-arm/kura
+mkdir -p /home/ubuntu/kura-docker-arm/kura/data
+chmod 777 /home/ubuntu/kura-docker-arm/kura/data
+mkdir -p /home/ubuntu/kura-docker-arm/kura/user
+chmod 777 /home/ubuntu/kura-docker-arm/kura/user
+
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
@@ -8,9 +16,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 LOCAL_PORT=$1
 echo $LOCAL_PORT
 
-REPO=lisaong
+REPO=liangfaan
 IMAGE=$(basename $DIR)
-TAG="$(uname -m)"
+TAG=latest
 FULL_TAG=${REPO}/${IMAGE}:${TAG}
 
-docker run -d -p $LOCAL_PORT:80 $FULL_TAG /start.sh 128m
+docker run -d -v /home/ubuntu/kura-docker-arm/kura/data:/opt/eclipse/kura/data \
+		-v /home/ubuntu/kura-docker-arm/kura/user:/opt/eclipse/kura/data/user \
+		 -p $LOCAL_PORT:80 $FULL_TAG /start.sh 2048m
